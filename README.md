@@ -1,8 +1,8 @@
-#Digital Image Processor
+# Digital Image Processor
 
 A QT desktop application for image processing.
 
-##Features to Implement
+## Features to Implement
 
 * Crop
 * Grayscale
@@ -22,9 +22,16 @@ A QT desktop application for image processing.
 * Sobel Edge detection
 * Halftoning
 * Dither
+* resize
+* sharpen
+* Emboss
+* Identity
+* Outline
+* Grayscale
 
 
-##References
+## References
 
 * https://en.wikipedia.org/wiki/Digital_image_processing
 * http://setosa.io/ev/image-kernels/
+* http://www.tannerhelland.com/3643/grayscale-image-algorithm-vb6/
