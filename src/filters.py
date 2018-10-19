@@ -138,3 +138,27 @@ def outline(img):
     new_image = new_image.astype(np.uint8)
     new_image = utils.InvertGrayImg(new_image)
     return new_image
+
+    
+def rotate(img):
+    """
+    Rotates the image
+
+    Parameters:
+    arg1 (np.array): numpy image matrix
+
+    Returns:
+    np.array: filterd gray scale image
+    """
+    new_image=np.zeros_like(img)
+    new_image=new_image.reshape(img.shape[1],img.shape[0],3)
+    imgr=img[:,:,0]
+    imgg=img[:,:,1]
+    imgb=img[:,:,2]
+    imgr=np.transpose(imgr)
+    imgg=np.transpose(imgg)
+    imgb=np.transpose(imgb)
+    new_image[:,:,0]=imgr
+    new_image[:,:,1]=imgg
+    new_image[:,:,2]=imgb
+    return new_image
