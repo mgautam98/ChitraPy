@@ -24,7 +24,7 @@
 |20.| sharpen | Pending |
 |21.| Emboss | Pending |
 |22.| Identity | Pending |
-|23.| Outline | Pending |
+|23.| Outline | Done |
 
 # Desktop Application
 
