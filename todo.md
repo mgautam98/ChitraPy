@@ -10,8 +10,8 @@
 |6.| Salt and Pepper | Pending |
 |7.| Stretch | Pending |
 |8.| Warp | Pending |
-|9.| Rotate | Pending |
-|10.| Invert | Pending |
+|9.| Rotate | Done |
+|10.| Invert | Done |
 |11.| Gaussian blur | Pending |
 |12.| Quick Blur | Pending |
 |13.| Contrast Enhancement (Histogram Equalization) | Pending |
