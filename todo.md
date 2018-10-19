@@ -3,7 +3,7 @@
 |No. | Feature | Status |
 |----|---------|--------|
 |1.| Crop    | Pending |
-|2.| Grayscale | Pending |
+|2.| Grayscale | Done |
 |3.| Negative | Pending |
 |4.| Sepia | Pending |
 |5.| Hue | Pending |
@@ -17,7 +17,7 @@
 |13.| Contrast Enhancement (Histogram Equalization) | Pending |
 |14.| Local Contrast Enhancement | Pending |
 |15.| Add Watermark | Pending |
-|16.| Sobel Edge detection | Pending |
+|16.| Sobel Edge detection | Done |
 |17.| Halftoning | Pending |
 |18.| Dither | Pending |
 |19.| resize | Pending |
@@ -25,7 +25,6 @@
 |21.| Emboss | Pending |
 |22.| Identity | Pending |
 |23.| Outline | Pending |
-|24.| Gray | Pending	|
 
 # Desktop Application
 
