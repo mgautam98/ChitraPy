@@ -27,7 +27,6 @@ A QT desktop application for image processing.
 * Emboss
 * Identity
 * Outline
-* Grayscale
 
 
 ## References
