@@ -13,7 +13,7 @@
 |9.| Rotate | Done |
 |10.| Invert | Done |
 |11.| Gaussian blur | Pending |
-|12.| Quick Blur | Pending |
+|12.| Quick Blur | Done |
 |13.| Contrast Enhancement (Histogram Equalization) | Pending |
 |14.| Local Contrast Enhancement | Pending |
 |15.| Add Watermark | Pending |
@@ -23,7 +23,7 @@
 |19.| resize | Pending |
 |20.| sharpen | Done |
 |21.| Emboss | Done |
-|22.| Identity | Pending |
+|22.| Identity | Done |
 |23.| Outline | Done |
 
 # Desktop/Web Application
