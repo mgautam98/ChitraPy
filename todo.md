@@ -21,12 +21,12 @@
 |17.| Halftoning | Pending |
 |18.| Dither | Pending |
 |19.| resize | Pending |
-|20.| sharpen | Pending |
-|21.| Emboss | Pending |
+|20.| sharpen | Done |
+|21.| Emboss | Done |
 |22.| Identity | Pending |
 |23.| Outline | Done |
 
-# Desktop Application
+# Desktop/Web Application
 
 * Browse and select Image
 * Dropdown to select filter
