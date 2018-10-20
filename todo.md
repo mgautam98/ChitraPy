@@ -4,14 +4,14 @@
 |----|---------|--------|
 |1.| Crop    | Pending |
 |2.| Grayscale | Done |
-|3.| Negative | Pending |
+|3.| Negative | Done |
 |4.| Sepia | Pending |
 |5.| Hue | Pending |
 |6.| Salt and Pepper | Pending |
 |7.| Stretch | Pending |
 |8.| Warp | Pending |
-|9.| Rotate | Pending |
-|10.| Invert | Pending |
+|9.| Rotate | Done |
+|10.| Invert | Done |
 |11.| Gaussian blur | Pending |
 |12.| Quick Blur | Pending |
 |13.| Contrast Enhancement (Histogram Equalization) | Pending |
