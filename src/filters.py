@@ -185,6 +185,7 @@ def invert(img):
             new_img[ix, iy] = img[img.shape[0]-ix-1, img.shape[1]-iy-1]
     return new_img
 
+
 def negative(img):
 
     """
@@ -203,5 +204,28 @@ def negative(img):
         for iy in range(new_img.shape[1]):
             for iz in range(new_img.shape[2]):
                 new_img[ix, iy, iz] = 255 - img[ix, iy, iz]
+
+    return new_img.astype(np.uint8)
+
+
+def sepia(img):
+
+    """
+    Applies sepia filter to the given image.
+
+    Parameters:
+    arg1 (np.array): numpy image matrix.
+
+    Returns:
+    np.array: Image with sepia filter applied.
+    """
+
+    new_img = np.zeros_like(img)
+
+    for ix in range(new_img.shape[0]):
+        for iy in range(new_img.shape[1]):
+            new_img[ix, iy, 0] = 0.393*img[ix,iy,0] + 0.769*img[ix,iy,1] + 0.189*img[ix,iy,2]
+            new_img[ix, iy, 1] = 0.349*img[ix,iy,0] + 0.686*img[ix,iy,1] + 0.168*img[ix,iy,2]
+            new_img[ix, iy, 2] = 0.272*img[ix,iy,0] + 0.534*img[ix,iy,1] + 0.131*img[ix,iy,2]
 
     return new_img.astype(np.uint8)
