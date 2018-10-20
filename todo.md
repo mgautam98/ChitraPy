@@ -5,7 +5,7 @@
 |1.| Crop    | Pending |
 |2.| Grayscale | Done |
 |3.| Negative | Done |
-|4.| Sepia | Pending |
+|4.| Sepia | Done |
 |5.| Hue | Pending |
 |6.| Salt and Pepper | Pending |
 |7.| Stretch | Pending |
