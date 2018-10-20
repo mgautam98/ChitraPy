@@ -2,7 +2,7 @@
 
 |No. | Feature | Status |
 |----|---------|--------|
-|1.| Crop    | Pending |
+|1.| Crop    | Done |
 |2.| Grayscale | Done |
 |3.| Negative | Done |
 |4.| Sepia | Done |
