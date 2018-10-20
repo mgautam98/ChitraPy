@@ -6,13 +6,13 @@ import utils.utils as utils
 def left_sobel(img):
 
     """
-    Applies left sobel filter to a colored numpy image
+    Applies left sobel filter to a colored numpy image.
 
     Parameters:
-    arg1 (np.array): numpy image matrix
+    arg1 (np.array): Numpy image matrix.
 
     Returns:
-    np.array: filterd left sobel image
+    np.array: Filterd left sobel image.
     """
 
     kernel = np.array([[1., 0., -1.],
@@ -37,13 +37,14 @@ def left_sobel(img):
 def right_sobel(img):
 
     """
-    Applies right sobel filter to a colored numpy image
+    Applies right sobel filter to a colored numpy image.
 
     Parameters:
-    arg1 (np.array): numpy image matrix
+    arg1 (np.array): Numpy image matrix.
 
     Returns:
-    np.array: filterd right sobel image
+    np.array: Filterd right sobel image.
+
     """
 
     kernel = np.array([[-1., 0., 1.],
@@ -68,13 +69,13 @@ def right_sobel(img):
 def top_sobel(img):
 
     """
-    Applies top sobel filter to a colored numpy image
+    Applies top sobel filter to a colored numpy image.
 
     Parameters:
-    arg1 (np.array): numpy image matrix
+    arg1 (np.array): Numpy image matrix.
 
     Returns:
-    np.array: filterd top sobel image
+    np.array: Filterd top sobel image.
     """
 
     kernel = np.array([[1., 2., 1.],
@@ -98,13 +99,13 @@ def top_sobel(img):
 
 def gray_scale(img):
     """
-    Applies gray scale filter to a colored numpy image
+    Applies gray scale filter to a colored numpy image.
 
     Parameters:
-    arg1 (np.array): numpy image matrix
+    arg1 (np.array): Numpy image matrix.
 
     Returns:
-    np.array: filterd gray scale image
+    np.array: Filterd gray scale image.
     """
     return utils.rgb2gray(img)
 
@@ -112,13 +113,13 @@ def gray_scale(img):
 def outline(img):
 
     """
-    Applies Outline filter to a colored numpy image
+    Applies Outline filter to a colored numpy image.
 
     Parameters:
-    arg1 (np.array): numpy image matrix
+    arg1 (np.array): Numpy image matrix.
 
     Returns:
-    np.array: filtered outlined image
+    np.array: Filtered outlined image.
     """
 
     kernel = np.array([[-1., -1., -1.],
@@ -139,16 +140,16 @@ def outline(img):
     new_image = utils.InvertGrayImg(new_image)
     return new_image
 
-    
+
 def rotate(img):
     """
-    Rotates the image
+    Rotates the image by 90 degrees.
 
     Parameters:
-    arg1 (np.array): numpy image matrix
+    arg1 (np.array): Numpy image matrix.
 
     Returns:
-    np.array: filterd gray scale image
+    np.array: Rotated image.
     """
     new_image=np.zeros_like(img)
     new_image=new_image.reshape(img.shape[1],img.shape[0],3)
@@ -162,3 +163,45 @@ def rotate(img):
     new_image[:,:,1]=imgg
     new_image[:,:,2]=imgb
     return new_image
+
+
+
+def invert(img):
+
+    """
+    Rotates the image by 180 degrees.
+
+    Parameters:
+    arg1 (np.array): numpy image matrix.
+
+    Returns:
+    np.array: Inverted image.
+    """
+
+    new_img = np.zeros_like(img)
+
+    for ix in range(new_img.shape[0]):
+        for iy in range(new_img.shape[1]):
+            new_img[ix, iy] = img[img.shape[0]-ix-1, img.shape[1]-iy-1]
+    return new_img
+
+def negative(img):
+
+    """
+    Negates the given image.
+
+    Parameters:
+    arg1 (np.array): numpy image matrix.
+
+    Returns:
+    np.array: Negative of the given image.
+    """
+
+    new_img = np.zeros_like(img)
+
+    for ix in range(new_img.shape[0]):
+        for iy in range(new_img.shape[1]):
+            for iz in range(new_img.shape[2]):
+                new_img[ix, iy, iz] = 255 - img[ix, iy, iz]
+
+    return new_img.astype(np.uint8)
