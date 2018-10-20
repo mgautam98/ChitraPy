@@ -1,6 +1,6 @@
 # Digital Image Processor
 
-A QT desktop application for image processing.
+Image Processing Library in Python.
 
 ## Features to Implement
 
