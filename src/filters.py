@@ -317,6 +317,39 @@ def identity(img):
 
     return new_image.astype(np.uint8)
 
+
+
+
+  def crop(img, top_left, bottom_right):
+
+    """
+    Crops the image to given dimension.
+
+    Parameters:
+    arg1 (np.array): Numpy image matrix.
+    arg2 (np.array): Top left corner co-ordinates.
+    arg3 (np.array): Top right corner co-ordinates.
+
+    Returns:
+    np.array: Cropped image.
+    """
+
+    if(top_left[0]<0 or top_left[1]<0 or bottom_right[0]<0 or bottom_right[1]<0):
+        print("\nCan not Crop!")
+        return img
+
+    if(bottom_right[0] > img.shape[0] or bottom_right[1] > img.shape[1] or top_left[0] > bottom_right[0] or top_left[1] > bottom_right[1]):
+        print("\nCan not Crop!")
+        return img
+
+    new_img = np.zeros((bottom_right[0] - top_left[0], bottom_right[1] - top_left[1], 3))
+    for ix in range(new_img.shape[0]):
+        for iy in range(new_img.shape[1]):
+            new_img[ix, iy, :] = img[ix + top_left[0], iy + top_left[1], :]
+
+    return new_img.astype(np.uint8)
+
+  
   
 def blur(img):
     """
@@ -339,5 +372,6 @@ def blur(img):
                     new_image[ix, iy,iz] = max(0, h_prod.sum())
     new_image = new_image.astype(np.uint8)
     return new_image
+
 
 
