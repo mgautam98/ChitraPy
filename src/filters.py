@@ -234,3 +234,32 @@ def emboss(img):
     
     new_image = new_image.astype(np.uint8)
     return new_image
+
+
+def sharpen(img):
+    
+    """
+    Applies Sharpen filter to a colored numpy image.
+
+    Parameters:
+    arg1 (np.array): Numpy image matrix.
+
+    Returns:
+    np.array: Filtered Sharpen image.
+    """
+    
+    kernel = np.array([[0., -1., 0.],
+                   [-1., 5. , -1.],
+                   [0., -1., 0.]])
+    
+    new_image = np.zeros((img.shape[0]-kernel.shape[0]+1, img.shape[1]-kernel.shape[1]+1, 3))
+
+    for iz in range(new_image.shape[2]):
+        for ix in range(new_image.shape[0]):
+            for iy in range(new_image.shape[1]):
+                im_patch = img[ix:ix+kernel.shape[0], iy:iy+kernel.shape[1], iz]
+                h_prod = im_patch * kernel
+                new_image[ix, iy, iz] = max(0, h_prod.sum())
+    
+    new_image = new_image.astype(np.uint8) 
+    return new_image
