@@ -25,7 +25,9 @@
 |21.| Emboss | Done |
 |22.| Identity | Done |
 |23.| Outline | Done |
-|24.| Monochrome | Done |
+|24.| Monochrome | Pending |
+|25.| Zoom  | Pending |
+
 
 # Desktop/Web Application
 
