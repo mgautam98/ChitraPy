@@ -320,7 +320,7 @@ def identity(img):
 
 
 
-  def crop(img, top_left, bottom_right):
+def crop(img, top_left, bottom_right):
 
     """
     Crops the image to given dimension.
@@ -349,8 +349,8 @@ def identity(img):
 
     return new_img.astype(np.uint8)
 
-  
-  
+
+
 def blur(img):
     """
     Blurs the  image
@@ -363,7 +363,7 @@ def blur(img):
     """
     kernel=np.array([[0.0625,0.125,0.0625],[0.125,0.25,0.125],[0.0625,0.125,0.0625]])
     new_image = np.zeros((img.shape[0]-kernel.shape[0]+1, img.shape[1]-kernel.shape[1]+1, 3))
-    
+
     for iz in range(new_image.shape[2]):
         for ix in range(new_image.shape[0]):
             for iy in range(new_image.shape[1]):
@@ -374,4 +374,26 @@ def blur(img):
     return new_image
 
 
+def monochrome(img):
 
+    """
+    Applies monochrome filter to a colored numpy image.
+
+    Parameters:
+    arg1 (np.array): Numpy image matrix.
+
+    Returns:
+    np.array: Monochrome applied image.
+    """
+    img = gray_scale(img)
+    img = img.astype(np.uint8)
+    new_img = np.zeros_like(img)
+
+    for ix in range(new_img.shape[0]):
+        for iy in range(new_img.shape[1]):
+            if(img[ix, iy]>128):
+                new_img[ix, iy] = 255
+            else:
+                new_img[ix, iy] = 0
+
+    return new_img.astype(np.uint8)
