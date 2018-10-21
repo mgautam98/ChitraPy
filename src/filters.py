@@ -397,3 +397,29 @@ def monochrome(img):
                 new_img[ix, iy] = 0
 
     return new_img.astype(np.uint8)
+
+
+def sliding_contrast(img, per):
+
+    """
+    Changes contrast of the image.
+
+    Parameters:
+    arg1 (np.array): Numpy image matrix.
+    arg1 (np.array): Percentage of contrast to change -100% to 100%.
+
+    Returns:
+    np.array: Monochrome applied image.
+    """
+
+    new_img = np.zeros_like(img)
+
+    for iz in range(new_img.shape[2]):
+        for ix in range(new_img.shape[0]):
+            for iy in range(new_img.shape[1]):
+                if per>0:
+                    new_img[ix, iy, iz] = min(255, img[ix, iy, iz] + per*2.55)
+                else:
+                    new_img[ix, iy, iz] = max(0, img[ix, iy, iz] + per*2.55)
+
+    return new_img.astype(np.uint8)
