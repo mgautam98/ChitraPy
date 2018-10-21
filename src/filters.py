@@ -231,7 +231,11 @@ def emboss(img):
             for iy in range(new_image.shape[1]):
                 im_patch = img[ix:ix+kernel.shape[0], iy:iy+kernel.shape[1], iz]
                 h_prod = im_patch * kernel
-                new_image[ix, iy, iz] = max(0, h_prod.sum())
+
+                if h_prod.sum() < 0:
+                    new_image[ix, iy, iz] = max(0, h_prod.sum())
+                else:
+                    new_image[ix, iy, iz] = min(255, h_prod.sum())
 
     return new_image.astype(np.uint8)
 
@@ -259,7 +263,11 @@ def sharpen(img):
             for iy in range(new_image.shape[1]):
                 im_patch = img[ix:ix+kernel.shape[0], iy:iy+kernel.shape[1], iz]
                 h_prod = im_patch * kernel
-                new_image[ix, iy, iz] = max(0, h_prod.sum())
+
+                if h_prod.sum() < 0:
+                    new_image[ix, iy, iz] = max(0, h_prod.sum())
+                else:
+                    new_image[ix, iy, iz] = min(255, h_prod.sum())
 
     return new_image.astype(np.uint8)
 
@@ -281,9 +289,9 @@ def sepia(img):
 
     for ix in range(new_img.shape[0]):
         for iy in range(new_img.shape[1]):
-            new_img[ix, iy, 0] = 0.393*img[ix,iy,0] + 0.769*img[ix,iy,1] + 0.189*img[ix,iy,2]
-            new_img[ix, iy, 1] = 0.349*img[ix,iy,0] + 0.686*img[ix,iy,1] + 0.168*img[ix,iy,2]
-            new_img[ix, iy, 2] = 0.272*img[ix,iy,0] + 0.534*img[ix,iy,1] + 0.131*img[ix,iy,2]
+            new_img[ix, iy, 0] = min(255, 0.393*img[ix,iy,0] + 0.769*img[ix,iy,1] + 0.189*img[ix,iy,2])
+            new_img[ix, iy, 1] = min(255, 0.349*img[ix,iy,0] + 0.686*img[ix,iy,1] + 0.168*img[ix,iy,2])
+            new_img[ix, iy, 2] = min(255, 0.272*img[ix,iy,0] + 0.534*img[ix,iy,1] + 0.131*img[ix,iy,2])
 
     return new_img.astype(np.uint8)
 
@@ -351,7 +359,7 @@ def crop(img, top_left, bottom_right):
 
 
 
-def blur(img):
+def quick_blur(img):
     """
     Blurs the  image
 
