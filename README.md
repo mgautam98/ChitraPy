@@ -28,6 +28,7 @@ Image Processing Library in Python.
 * Identity
 * Outline
 * Monochrome
+* Zoom
 
 
 ## References
