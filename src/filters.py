@@ -107,7 +107,7 @@ def gray_scale(img):
     Returns:
     np.array: Filterd gray scale image.
     """
-    return utils.rgb2gray(img)
+    return utils.rgb2gray(img).astype(np.uint8)
 
 
 def outline(img):
