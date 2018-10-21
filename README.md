@@ -27,6 +27,8 @@ Image Processing Library in Python.
 * Emboss
 * Identity
 * Outline
+* Monochrome
+* Zoom
 
 
 ## References
