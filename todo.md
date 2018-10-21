@@ -25,7 +25,7 @@
 |21.| Emboss | Done |
 |22.| Identity | Done |
 |23.| Outline | Done |
-|24.| Monochrome | Pending |
+|24.| Monochrome | Done |
 |25.| Zoom  | Pending |
 
 
