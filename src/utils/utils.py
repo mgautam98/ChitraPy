@@ -1,6 +1,9 @@
 import numpy as np
+from numba import jit
 import matplotlib.pyplot as plt
 
+
+@jit(nopython=True)
 def rgb2gray(img):
     """
     Converts a given numpy array colored image to gray image
@@ -13,6 +16,9 @@ def rgb2gray(img):
     """
     return np.dot(img[...,:3], [0.299, 0.587, 0.114])
 
+
+
+@jit(nopython=True)
 def display_gray(img):
     """
     Displays only single channel of a numpy image matrix
@@ -27,6 +33,9 @@ def display_gray(img):
 
     return
 
+
+
+@jit(nopython=True)
 def InvertGrayImg(img):
     """
     Inverts a single channel image
@@ -45,6 +54,8 @@ def InvertGrayImg(img):
     return img
 
 
+
+@jit(nopython=True)
 def histogram(img):
 
     """

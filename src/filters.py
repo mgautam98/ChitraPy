@@ -1,8 +1,10 @@
 import numpy as np
+from numba import jit
 import matplotlib.pyplot as plt
 import utils.utils as utils
 
 
+@jit(nopython=True)
 def left_sobel(img):
 
     """
@@ -34,6 +36,7 @@ def left_sobel(img):
     return new_image
 
 
+@jit(nopython=True)
 def right_sobel(img):
 
     """
@@ -66,6 +69,7 @@ def right_sobel(img):
     return new_image
 
 
+@jit(nopython=True)
 def top_sobel(img):
 
     """
@@ -97,6 +101,7 @@ def top_sobel(img):
     return new_image
 
 
+@jit(nopython=True)
 def gray_scale(img):
     """
     Applies gray scale filter to a colored numpy image.
@@ -110,6 +115,7 @@ def gray_scale(img):
     return utils.rgb2gray(img).astype(np.uint8)
 
 
+@jit(nopython=True)
 def outline(img):
 
     """
@@ -141,6 +147,7 @@ def outline(img):
     return new_image
 
 
+@jit(nopython=True)
 def rotate(img):
     """
     Rotates the image by 90 degrees.
@@ -165,7 +172,7 @@ def rotate(img):
     return new_image
 
 
-
+@jit(nopython=True)
 def invert(img):
 
     """
@@ -186,6 +193,7 @@ def invert(img):
     return new_img
 
 
+@jit(nopython=True)
 def negative(img):
 
     """
@@ -208,6 +216,7 @@ def negative(img):
     return new_img.astype(np.uint8)
 
 
+@jit(nopython=True)
 def emboss(img):
 
     """
@@ -240,6 +249,8 @@ def emboss(img):
     return new_image.astype(np.uint8)
 
 
+
+@jit(nopython=True)
 def sharpen(img):
 
     """
@@ -272,7 +283,7 @@ def sharpen(img):
     return new_image.astype(np.uint8)
 
 
-
+@jit(nopython=True)
 def sepia(img):
 
     """
@@ -297,7 +308,7 @@ def sepia(img):
 
 
 
-
+@jit(nopython=True)
 def identity(img):
 
     """
@@ -327,7 +338,7 @@ def identity(img):
 
 
 
-
+@jit(nopython=True)
 def crop(img, top_left, bottom_right):
 
     """
@@ -358,7 +369,7 @@ def crop(img, top_left, bottom_right):
     return new_img.astype(np.uint8)
 
 
-
+@jit(nopython=True)
 def quick_blur(img):
     """
     Blurs the  image
@@ -382,6 +393,7 @@ def quick_blur(img):
     return new_image
 
 
+@jit(nopython=True)
 def monochrome(img):
 
     """
@@ -407,6 +419,7 @@ def monochrome(img):
     return new_img.astype(np.uint8)
 
 
+@jit(nopython=True)
 def sliding_contrast(img, per):
 
     """
