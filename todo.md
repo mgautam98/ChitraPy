@@ -19,7 +19,7 @@
 |15.| Add Watermark | Pending |
 |16.| Sobel Edge detection | Done |
 |17.| Halftoning | Pending |
-|18.| Dither | Pending |
+|18.| Dither | Done |
 |19.| resize | Pending |
 |20.| sharpen | Done |
 |21.| Emboss | Done |

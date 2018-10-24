@@ -427,7 +427,7 @@ def sliding_contrast(img, per):
 
     Parameters:
     arg1 (np.array): Numpy image matrix.
-    arg1 (np.array): Percentage of contrast to change -100% to 100%.
+    arg2 (np.array): Percentage of contrast to change -100% to 100%.
 
     Returns:
     np.array: Monochrome applied image.
@@ -444,3 +444,38 @@ def sliding_contrast(img, per):
                     new_img[ix, iy, iz] = max(0, img[ix, iy, iz] + per*2.55)
 
     return new_img.astype(np.uint8)
+
+
+@jit(nopython=True)
+def dither(img):
+  
+    """
+    Applies dither filter to a colored numpy image..
+
+    Parameters:
+    arg1 (np.array): Numpy image matrix.
+
+    Returns:
+    np.array: Dithered image.
+    """
+    img = utils.rgb2gray(img)
+    
+    pixel = np.copy(img)
+    w, h = img.shape
+    
+    for iy in range(h-1):
+        for ix in range(1,w-1):
+            oldpixel = pixel[ix][iy]
+            newpixel = utils.find_closest_palette_color(oldpixel)
+            pixel[ix][iy] = newpixel
+            err = oldpixel - newpixel
+            if ix+1 < w:
+                pixel[ix+1][iy] += err*(7./16)
+            if ix-1 > 0 & iy+1 < h:
+                pixel[ix-1][iy+1] += err*(3./16)
+            if iy+1 < h:
+                pixel[ix][iy+1] += err*(5./16)
+            if ix+1 < w:
+                pixel[ix+1][iy+1] += err*(1./16)
+
+    return pixel
