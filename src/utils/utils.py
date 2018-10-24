@@ -3,6 +3,7 @@ from numba import jit
 import matplotlib.pyplot as plt
 
 
+@jit
 def rgb2gray(img):
     """
     Converts a given numpy array colored image to gray image
@@ -64,7 +65,6 @@ def histogram(img):
     arg1 (np.array): Numpy image matrix.
 
     """
-
     valr = []
     valg = []
     valb = []
@@ -82,6 +82,7 @@ def histogram(img):
     axarr[2].hist(valb, bins=bins, color = 'blue')
 
 
+
 @jit(nopython=True)
 def find_closest_palette_color(oldpixel):
 
@@ -97,6 +98,8 @@ def find_closest_palette_color(oldpixel):
 
     return round(oldpixel/255)*255
 
+
+
 @jit
 def get_pmf_cdf(img, display=False):
 
@@ -108,7 +111,7 @@ def get_pmf_cdf(img, display=False):
     bool : display, default it is False.
 
     Returns:
-    Dictionary : PMF and CDF. 
+    Dictionary : PMF and CDF.
     """
 
     pmf = {}

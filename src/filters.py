@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import utils.utils as utils
 
 
-@jit(nopython=True)
+@jit
 def left_sobel(img):
 
     """
@@ -36,7 +36,7 @@ def left_sobel(img):
     return new_image
 
 
-@jit(nopython=True)
+@jit
 def right_sobel(img):
 
     """
@@ -69,7 +69,7 @@ def right_sobel(img):
     return new_image
 
 
-@jit(nopython=True)
+@jit
 def top_sobel(img):
 
     """
@@ -115,7 +115,7 @@ def gray_scale(img):
     return np.dot(img[...,:3], [0.299, 0.587, 0.114]).astype(np.uint8)
 
 
-@jit(nopython=True)
+@jit
 def outline(img):
 
     """
@@ -193,6 +193,7 @@ def invert(img):
     return new_img
 
 
+
 @jit(nopython=True)
 def negative(img):
 
@@ -214,6 +215,7 @@ def negative(img):
                 new_img[ix, iy, iz] = 255 - img[ix, iy, iz]
 
     return new_img.astype(np.uint8)
+
 
 
 @jit(nopython=True)
@@ -283,6 +285,7 @@ def sharpen(img):
     return new_image.astype(np.uint8)
 
 
+
 @jit(nopython=True)
 def sepia(img):
 
@@ -339,7 +342,7 @@ def identity(img):
 
 
 @jit(nopython=True)
-def crop(img, top_left, bottom_right):
+def crop(img, top_left , bottom_right):
 
     """
     Crops the image to given dimension.
@@ -369,6 +372,7 @@ def crop(img, top_left, bottom_right):
     return new_img.astype(np.uint8)
 
 
+
 @jit(nopython=True)
 def quick_blur(img):
     """
@@ -391,6 +395,7 @@ def quick_blur(img):
                     new_image[ix, iy,iz] = max(0, h_prod.sum())
     new_image = new_image.astype(np.uint8)
     return new_image
+
 
 
 @jit(nopython=True)
@@ -419,15 +424,16 @@ def monochrome(img):
     return new_img.astype(np.uint8)
 
 
+
 @jit(nopython=True)
-def sliding_contrast(img, per):
+def sliding_contrast(img, percentage = 0):
 
     """
     Changes contrast of the image.
 
     Parameters:
     arg1 (np.array): Numpy image matrix.
-    arg2 (np.array): Percentage of contrast to change -100% to 100%.
+    arg2 (int): Percentage of contrast to change -100 to 100.
 
     Returns:
     np.array: Monochrome applied image.
@@ -438,15 +444,16 @@ def sliding_contrast(img, per):
     for iz in range(new_img.shape[2]):
         for ix in range(new_img.shape[0]):
             for iy in range(new_img.shape[1]):
-                if per>0:
-                    new_img[ix, iy, iz] = min(255, img[ix, iy, iz] + per*2.55)
+                if percentage>0:
+                    new_img[ix, iy, iz] = min(255, img[ix, iy, iz] + percentage*2.55)
                 else:
-                    new_img[ix, iy, iz] = max(0, img[ix, iy, iz] + per*2.55)
+                    new_img[ix, iy, iz] = max(0, img[ix, iy, iz] + percentage*2.55)
 
     return new_img.astype(np.uint8)
 
 
-@jit(nopython=True)
+
+@jit
 def dither(img):
 
     """
@@ -481,6 +488,7 @@ def dither(img):
     return pixel
 
 
+
 def contrast_enhancement(img):
 
     """
@@ -505,7 +513,7 @@ def contrast_enhancement(img):
 
     for i in range(256):
         new_dic[i]*=255
-        new_dic[i] = math.floor(new_dic[i])
+        new_dic[i] = np.floor(new_dic[i])
 
     for ix in range(img.shape[0]):
         for iy in range(img.shape[1]):
