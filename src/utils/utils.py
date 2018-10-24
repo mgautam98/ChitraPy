@@ -81,3 +81,19 @@ def histogram(img):
     axarr[0].hist(valr, bins=bins, color = 'red')
     axarr[1].hist(valg, bins=bins, color = 'green')
     axarr[2].hist(valb, bins=bins, color = 'blue')
+
+
+@jit(nopython=True)
+def find_closest_palette_color(oldpixel):
+
+    """
+    To find the closest palette color
+
+    Parameters:
+    arg1 (np.array): numpy image matrix
+
+    Returns:
+    np.array: closet palette color
+    """
+
+    return round(oldpixel/255)*255
