@@ -29,6 +29,7 @@ Image Processing Library in Python.
 * Outline
 * Monochrome
 * Zoom
+* Contrast adjustment (Histogram sliding)
 
 
 ## References
