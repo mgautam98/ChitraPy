@@ -427,7 +427,7 @@ def sliding_contrast(img, per):
 
     Parameters:
     arg1 (np.array): Numpy image matrix.
-    arg1 (np.array): Percentage of contrast to change -100% to 100%.
+    arg2 (np.array): Percentage of contrast to change -100% to 100%.
 
     Returns:
     np.array: Monochrome applied image.
