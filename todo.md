@@ -14,7 +14,7 @@
 |10.| Invert | Done |
 |11.| Gaussian blur | Pending |
 |12.| Quick Blur | Done |
-|13.| Contrast Enhancement (Histogram Equalization) | Pending |
+|13.| Contrast Enhancement (Histogram Equalization) | Done |
 |14.| Local Contrast Enhancement | Pending |
 |15.| Add Watermark | Pending |
 |16.| Sobel Edge detection | Done |
@@ -27,6 +27,7 @@
 |23.| Outline | Done |
 |24.| Monochrome | Done |
 |25.| Zoom  | Pending |
+|26.| Contrast adjustment (Histogram sliding) | Done |
 
 
 # Desktop/Web Application

@@ -3,7 +3,6 @@ from numba import jit
 import matplotlib.pyplot as plt
 
 
-@jit(nopython=True)
 def rgb2gray(img):
     """
     Converts a given numpy array colored image to gray image
@@ -18,7 +17,7 @@ def rgb2gray(img):
 
 
 
-@jit(nopython=True)
+@jit
 def display_gray(img):
     """
     Displays only single channel of a numpy image matrix
@@ -87,13 +86,54 @@ def histogram(img):
 def find_closest_palette_color(oldpixel):
 
     """
-    To find the closest palette color
+    To find the closest palette color.
 
     Parameters:
-    arg1 (np.array): numpy image matrix
+    arg1 (np.array): Numpy image matrix.
 
     Returns:
-    np.array: closet palette color
+    np.array: Closet palette color.
     """
 
     return round(oldpixel/255)*255
+
+@jit
+def get_pmf_cdf(img, display=False):
+
+    """
+    Calculates PMF and CDF for an image.
+
+    Parameters:
+    arg1 (np.array): Numpy image matrix.
+    bool : display, default it is False.
+
+    Returns:
+    Dictionary : PMF and CDF. 
+    """
+
+    pmf = {}
+
+    for i in range(256):
+        pmf[i] = 0
+
+    for ix in range(img.shape[0]):
+        for iy in range(img.shape[1]):
+            pmf[img[ix, iy]] += 1
+
+    total_pix = img.shape[0]*img.shape[1]
+
+    for i in range(256):
+        pmf[i] /=total_pix
+
+    cdf = pmf.copy()
+    for i in range(1, 256):
+        cdf[i] += cdf[i-1]
+
+    #for displaying
+    if(display):
+        f, axarr = plt.subplots(2, sharex=True)
+        f.suptitle('PMF and CDF')
+        axarr[0].plot(pmf.keys(), pmf.values())
+        axarr[1].plot(cdf.keys(), cdf.values())
+
+    return pmf, cdf

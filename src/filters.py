@@ -101,7 +101,7 @@ def top_sobel(img):
     return new_image
 
 
-@jit(nopython=True)
+@jit
 def gray_scale(img):
     """
     Applies gray scale filter to a colored numpy image.
@@ -112,7 +112,7 @@ def gray_scale(img):
     Returns:
     np.array: Filterd gray scale image.
     """
-    return utils.rgb2gray(img).astype(np.uint8)
+    return np.dot(img[...,:3], [0.299, 0.587, 0.114]).astype(np.uint8)
 
 
 @jit(nopython=True)
@@ -448,9 +448,9 @@ def sliding_contrast(img, per):
 
 @jit(nopython=True)
 def dither(img):
-  
+
     """
-    Applies dither filter to a colored numpy image..
+    Applies dither filter to a colored numpy image.
 
     Parameters:
     arg1 (np.array): Numpy image matrix.
@@ -459,10 +459,10 @@ def dither(img):
     np.array: Dithered image.
     """
     img = utils.rgb2gray(img)
-    
+
     pixel = np.copy(img)
     w, h = img.shape
-    
+
     for iy in range(h-1):
         for ix in range(1,w-1):
             oldpixel = pixel[ix][iy]
@@ -479,3 +479,36 @@ def dither(img):
                 pixel[ix+1][iy+1] += err*(1./16)
 
     return pixel
+
+
+def contrast_enhancement(img):
+
+    """
+    Enhances contrast of an image using histogram equalization.
+
+    Parameters:
+    arg1 (np.array): Numpy image matrix.
+
+    Returns:
+    np.array: Contrast enhanced gray image.
+    """
+
+    try:
+        if img.shape[2]:
+            img = gray_scale(img)
+    except:
+        pass
+
+    pmf, cdf = utils.get_pmf_cdf(img)
+
+    new_dic = cdf.copy()
+
+    for i in range(256):
+        new_dic[i]*=255
+        new_dic[i] = math.floor(new_dic[i])
+
+    for ix in range(img.shape[0]):
+        for iy in range(img.shape[1]):
+            img[ix, iy] = new_dic[img[ix, iy]]
+
+    return img
