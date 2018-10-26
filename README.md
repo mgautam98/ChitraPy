@@ -29,6 +29,7 @@ Image Processing Library in Python.
 * Outline
 * Monochrome
 * Zoom
+* Contrast adjustment (Histogram sliding)
 
 
 ## References
@@ -36,4 +37,5 @@ Image Processing Library in Python.
 * https://en.wikipedia.org/wiki/Digital_image_processing
 * http://setosa.io/ev/image-kernels/
 * http://www.tannerhelland.com/3643/grayscale-image-algorithm-vb6/
-* [Dither](https://www.cs.princeton.edu/courses/archive/fall00/cs426/lectures/dither/dither.pdf)
+* https://www.cs.princeton.edu/courses/archive/fall00/cs426/lectures/dither/dither.pdf
+* https://hypjudy.github.io/2017/03/19/dip-histogram-equalization/
