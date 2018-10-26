@@ -398,7 +398,7 @@ def quick_blur(img):
 
 
 
-@jit(nopython=True)
+@jit
 def monochrome(img):
 
     """
