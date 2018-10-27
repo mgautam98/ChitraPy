@@ -19,15 +19,13 @@ def rgb2gray(img):
 
 
 @jit
-def display_gray(img):
+def display(img):
     """
-    Displays only single channel of a numpy image matrix
+    Displays only single channel/ three channel of a numpy image matrix
 
     Parameters:
     arg1 (np.array): numpy image matrix
 
-    Returns:
-    np.array: Gray scale numpy image matrix
     """
     plt.imshow(img, cmap = plt.get_cmap('gray'))
 
@@ -140,3 +138,24 @@ def get_pmf_cdf(img, display=False):
         axarr[1].plot(cdf.keys(), cdf.values())
 
     return pmf, cdf
+
+
+def save(img, name = "image"):
+
+    """
+    Saves an image in .jpg format in current working directory.
+
+    Parameters:
+    arg1 (np.array): Numpy image matrix.
+    arg2 (String) : Name of image. Default it is image.
+
+    """
+
+    import os
+    i = 1
+    if os.path.exists(name + ".jpg") :
+        while(os.path.exists(name + "(" + str(i) + ")" + ".jpg")):
+            i +=1
+
+        name+= "(" + str(i) + ")"
+    plt.imsave(name + ".jpg", img, cmap = plt.get_cmap('gray'))
