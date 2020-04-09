@@ -1,0 +1,21 @@
+language: python
+dist: xenial
+python:
+  - "3.6"
+cache:
+  pip: true
+before_install:
+  - pip3 install -U pip
+install:
+  - pip3 install codecov
+  - pip3 install --upgrade pip setuptools wheel
+  - pip3 install codecov
+script:
+  - python3 tests.py
+
+after_success:
+  - python3 -m codecov
+notifications:
+  email:
+  - on_failure: always
+  - on_success: always
