@@ -10,6 +10,7 @@ install:
   - pip3 install codecov
   - pip3 install --upgrade pip setuptools wheel
   - pip3 install codecov
+  - pip3 install -r tests/requirements.txt 
   - python3 setup.py install
 script:
   - python3 tests/tests.py
