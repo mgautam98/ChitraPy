@@ -12,7 +12,7 @@ install:
   - pip3 install codecov
   - python setup.py install
 script:
-  - python3 tests
+  - python3 tests/tests.py
 
 after_success:
   - python3 -m codecov
