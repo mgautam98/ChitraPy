@@ -12,9 +12,9 @@ install:
   - pip3 install codecov
   - pip3 install -r tests/requirements.txt 
   - python3 setup.py install
+  - pip install coverage
 script:
   - python3 tests/tests.py
-
 after_success:
   - python3 -m codecov
 notifications:
