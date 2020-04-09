@@ -2,14 +2,15 @@ language: python
 dist: xenial
 python:
   - "3.6"
-cache:
-  pip: true
+# cache:
+#   pip: true
 before_install:
   - pip3 install -U pip
 install:
   - pip3 install codecov
   - pip3 install --upgrade pip setuptools wheel
   - pip3 install codecov
+  - python setup.py install
 script:
   - python3 tests.py
 
