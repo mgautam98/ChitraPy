@@ -1,4 +1,4 @@
-# ChitraPy [![Build Status](https://travis-ci.com/mgautam98/ChitraPy.svg?branch=master)](https://travis-ci.com/mgautam98/ChitraPy)
+# ChitraPy [![Build Status](https://travis-ci.com/mgautam98/ChitraPy.svg?branch=master)](https://travis-ci.com/mgautam98/ChitraPy)  [![codecov](https://codecov.io/gh/mgautam98/ChitraPy/branch/master/graph/badge.svg)](https://codecov.io/gh/mgautam98/ChitraPy)
  
 ChitraPy is a digital Image Processing Library in Python.
 
