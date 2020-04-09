@@ -1,7 +1,7 @@
 import numpy as np
 from numba import jit
 import matplotlib.pyplot as plt
-import utils
+import helpers
 
 
 @jit
@@ -21,7 +21,7 @@ def left_sobel(img):
                    [2., 0., -2.],
                    [1., 0., -1.]])
 
-    img = utils.rgb2gray(img)
+    img = helpers.rgb2gray(img)
 
     new_image = np.zeros((img.shape[0]-kernel.shape[0]+1, img.shape[1]-kernel.shape[1]+1))
 
@@ -32,7 +32,7 @@ def left_sobel(img):
 
             new_image[ix, iy] = max(0, h_prod.sum())
     new_image = new_image.astype(np.uint8)
-    new_image = utils.InvertGrayImg(new_image)
+    new_image = helpers.InvertGrayImg(new_image)
     return new_image
 
 
@@ -54,7 +54,7 @@ def right_sobel(img):
                    [-2., 0., 2.],
                    [-1., 0., 1.]])
 
-    img = utils.rgb2gray(img)
+    img = helpers.rgb2gray(img)
 
     new_image = np.zeros((img.shape[0]-kernel.shape[0]+1, img.shape[1]-kernel.shape[1]+1))
 
@@ -65,7 +65,7 @@ def right_sobel(img):
 
             new_image[ix, iy] = max(0, h_prod.sum())
     new_image = new_image.astype(np.uint8)
-    new_image = utils.InvertGrayImg(new_image)
+    new_image = helpers.InvertGrayImg(new_image)
     return new_image
 
 
@@ -86,7 +86,7 @@ def top_sobel(img):
                    [0., 0., 0.],
                    [-1., -2., -1.]])
 
-    img = utils.rgb2gray(img)
+    img = helpers.rgb2gray(img)
 
     new_image = np.zeros((img.shape[0]-kernel.shape[0]+1, img.shape[1]-kernel.shape[1]+1))
 
@@ -97,7 +97,7 @@ def top_sobel(img):
 
             new_image[ix, iy] = max(0, h_prod.sum())
     new_image = new_image.astype(np.uint8)
-    new_image = utils.InvertGrayImg(new_image)
+    new_image = helpers.InvertGrayImg(new_image)
     return new_image
 
 
@@ -132,7 +132,7 @@ def outline(img):
                    [-1., 8., -1.],
                    [-1., -1., -1.]])
 
-    img = utils.rgb2gray(img)
+    img = helpers.rgb2gray(img)
 
     new_image = np.zeros((img.shape[0]-kernel.shape[0]+1, img.shape[1]-kernel.shape[1]+1))
 
@@ -143,7 +143,7 @@ def outline(img):
 
             new_image[ix, iy] = max(0, h_prod.sum())
     new_image = new_image.astype(np.uint8)
-    new_image = utils.InvertGrayImg(new_image)
+    new_image = helpers.InvertGrayImg(new_image)
     return new_image
 
 
@@ -465,7 +465,7 @@ def dither(img):
     Returns:
     np.array: Dithered image.
     """
-    img = utils.rgb2gray(img)
+    img = helpers.rgb2gray(img)
 
     pixel = np.copy(img)
     w, h = img.shape
@@ -473,7 +473,7 @@ def dither(img):
     for iy in range(h-1):
         for ix in range(1,w-1):
             oldpixel = pixel[ix][iy]
-            newpixel = utils.find_closest_palette_color(oldpixel)
+            newpixel = helpers.find_closest_palette_color(oldpixel)
             pixel[ix][iy] = newpixel
             err = oldpixel - newpixel
             if ix+1 < w:
@@ -507,7 +507,7 @@ def contrast_enhancement(img):
     except:
         pass
 
-    pmf, cdf = utils.get_pmf_cdf(img)
+    pmf, cdf = helpers.get_pmf_cdf(img)
 
     new_dic = cdf.copy()
 

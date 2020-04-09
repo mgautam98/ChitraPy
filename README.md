@@ -1,8 +1,8 @@
-# Digital Image Processor
+# ChitraPy
+ 
+ChitraPy is a digital Image Processing Library in Python.
 
-Image Processing Library in Python.
-
-## Features to Implement
+## Features
 
 * Crop
 * Grayscale
