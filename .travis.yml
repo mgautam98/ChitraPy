@@ -16,7 +16,7 @@ install:
 script:
   - python3 tests/tests.py
 after_success:
-  - python3 -m codecov
+  - codecov
 notifications:
   email:
   - on_failure: always
