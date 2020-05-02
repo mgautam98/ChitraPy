@@ -1,0 +1,477 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ChitraPy package &mdash; ChitraPy  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="setup module" href="setup.html" />
+    <link rel="prev" title="ChitraPy" href="modules.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> ChitraPy
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">ChitraPy</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">ChitraPy package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-ChitraPy.filters">ChitraPy.filters module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-ChitraPy.helpers">ChitraPy.helpers module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-ChitraPy">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="setup.html">setup module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html">tests package</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">ChitraPy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="modules.html">ChitraPy</a> &raquo;</li>
+        
+      <li>ChitraPy package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/ChitraPy.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="chitrapy-package">
+<h1>ChitraPy package<a class="headerlink" href="#chitrapy-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-ChitraPy.filters">
+<span id="chitrapy-filters-module"></span><h2>ChitraPy.filters module<a class="headerlink" href="#module-ChitraPy.filters" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="ChitraPy.filters.contrast_enhancement">
+<code class="sig-prename descclassname">ChitraPy.filters.</code><code class="sig-name descname">contrast_enhancement</code><span class="sig-paren">(</span><em class="sig-param">img</em><span class="sig-paren">)</span><a class="headerlink" href="#ChitraPy.filters.contrast_enhancement" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enhances contrast of an image using histogram equalization.</p>
+<p>Parameters:
+arg1 (np.array): Numpy image matrix.</p>
+<p>Returns:
+np.array: Contrast enhanced gray image.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ChitraPy.filters.crop">
+<code class="sig-prename descclassname">ChitraPy.filters.</code><code class="sig-name descname">crop</code><a class="headerlink" href="#ChitraPy.filters.crop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Crops the image to given dimension.</p>
+<p>Parameters:
+arg1 (np.array): Numpy image matrix.
+arg2 (np.array): Top left corner co-ordinates.
+arg3 (np.array): Top right corner co-ordinates.</p>
+<p>Returns:
+np.array: Cropped image.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ChitraPy.filters.dither">
+<code class="sig-prename descclassname">ChitraPy.filters.</code><code class="sig-name descname">dither</code><a class="headerlink" href="#ChitraPy.filters.dither" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies dither filter to a colored numpy image.</p>
+<p>Parameters:
+arg1 (np.array): Numpy image matrix.</p>
+<p>Returns:
+np.array: Dithered image.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ChitraPy.filters.emboss">
+<code class="sig-prename descclassname">ChitraPy.filters.</code><code class="sig-name descname">emboss</code><a class="headerlink" href="#ChitraPy.filters.emboss" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies Emboss filter to a colored numpy image.</p>
+<p>Parameters:
+arg1 (np.array): Numpy image matrix.</p>
+<p>Returns:
+np.array: Filtered Embossed image.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ChitraPy.filters.gray_scale">
+<code class="sig-prename descclassname">ChitraPy.filters.</code><code class="sig-name descname">gray_scale</code><a class="headerlink" href="#ChitraPy.filters.gray_scale" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies gray scale filter to a colored numpy image.</p>
+<p>Parameters:
+arg1 (np.array): Numpy image matrix.</p>
+<p>Returns:
+np.array: Filterd gray scale image.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ChitraPy.filters.identity">
+<code class="sig-prename descclassname">ChitraPy.filters.</code><code class="sig-name descname">identity</code><a class="headerlink" href="#ChitraPy.filters.identity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies identity filter to a colored numpy image.</p>
+<p>Parameters:
+arg1 (np.array): Numpy image matrix.</p>
+<p>Returns:
+np.array: Identity image.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ChitraPy.filters.invert">
+<code class="sig-prename descclassname">ChitraPy.filters.</code><code class="sig-name descname">invert</code><a class="headerlink" href="#ChitraPy.filters.invert" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rotates the image by 180 degrees.</p>
+<p>Parameters:
+arg1 (np.array): numpy image matrix.</p>
+<p>Returns:
+np.array: Inverted image.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ChitraPy.filters.left_sobel">
+<code class="sig-prename descclassname">ChitraPy.filters.</code><code class="sig-name descname">left_sobel</code><a class="headerlink" href="#ChitraPy.filters.left_sobel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies left sobel filter to a colored numpy image.</p>
+<p>Parameters:
+arg1 (np.array): Numpy image matrix.</p>
+<p>Returns:
+np.array: Filterd left sobel image.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ChitraPy.filters.monochrome">
+<code class="sig-prename descclassname">ChitraPy.filters.</code><code class="sig-name descname">monochrome</code><a class="headerlink" href="#ChitraPy.filters.monochrome" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies monochrome filter to a colored numpy image.</p>
+<p>Parameters:
+arg1 (np.array): Numpy image matrix.</p>
+<p>Returns:
+np.array: Monochrome applied image.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ChitraPy.filters.negative">
+<code class="sig-prename descclassname">ChitraPy.filters.</code><code class="sig-name descname">negative</code><a class="headerlink" href="#ChitraPy.filters.negative" title="Permalink to this definition">¶</a></dt>
+<dd><p>Negates the given image.</p>
+<p>Parameters:
+arg1 (np.array): numpy image matrix.</p>
+<p>Returns:
+np.array: Negative of the given image.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ChitraPy.filters.outline">
+<code class="sig-prename descclassname">ChitraPy.filters.</code><code class="sig-name descname">outline</code><a class="headerlink" href="#ChitraPy.filters.outline" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies Outline filter to a colored numpy image.</p>
+<p>Parameters:
+arg1 (np.array): Numpy image matrix.</p>
+<p>Returns:
+np.array: Filtered outlined image.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ChitraPy.filters.quick_blur">
+<code class="sig-prename descclassname">ChitraPy.filters.</code><code class="sig-name descname">quick_blur</code><a class="headerlink" href="#ChitraPy.filters.quick_blur" title="Permalink to this definition">¶</a></dt>
+<dd><p>Blurs the  image</p>
+<p>Parameters:
+arg1 (np.array): numpy image matrix</p>
+<p>Returns:
+np.array: Gray scale numpy image matrix</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ChitraPy.filters.right_sobel">
+<code class="sig-prename descclassname">ChitraPy.filters.</code><code class="sig-name descname">right_sobel</code><a class="headerlink" href="#ChitraPy.filters.right_sobel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies right sobel filter to a colored numpy image.</p>
+<p>Parameters:
+arg1 (np.array): Numpy image matrix.</p>
+<p>Returns:
+np.array: Filterd right sobel image.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ChitraPy.filters.rotate">
+<code class="sig-prename descclassname">ChitraPy.filters.</code><code class="sig-name descname">rotate</code><a class="headerlink" href="#ChitraPy.filters.rotate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rotates the image by 90 degrees.</p>
+<p>Parameters:
+arg1 (np.array): Numpy image matrix.</p>
+<p>Returns:
+np.array: Rotated image.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ChitraPy.filters.sepia">
+<code class="sig-prename descclassname">ChitraPy.filters.</code><code class="sig-name descname">sepia</code><a class="headerlink" href="#ChitraPy.filters.sepia" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies sepia filter to the given image.</p>
+<p>Parameters:
+arg1 (np.array): numpy image matrix.</p>
+<p>Returns:
+np.array: Image with sepia filter applied.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ChitraPy.filters.sharpen">
+<code class="sig-prename descclassname">ChitraPy.filters.</code><code class="sig-name descname">sharpen</code><a class="headerlink" href="#ChitraPy.filters.sharpen" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies Sharpen filter to a colored numpy image.</p>
+<p>Parameters:
+arg1 (np.array): Numpy image matrix.</p>
+<p>Returns:
+np.array: Filtered Sharpen image.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ChitraPy.filters.sliding_contrast">
+<code class="sig-prename descclassname">ChitraPy.filters.</code><code class="sig-name descname">sliding_contrast</code><a class="headerlink" href="#ChitraPy.filters.sliding_contrast" title="Permalink to this definition">¶</a></dt>
+<dd><p>Changes contrast of the image.</p>
+<p>Parameters:
+arg1 (np.array): Numpy image matrix.
+arg2 (int): Percentage of contrast to change -100 to 100.</p>
+<p>Returns:
+np.array: Monochrome applied image.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ChitraPy.filters.top_sobel">
+<code class="sig-prename descclassname">ChitraPy.filters.</code><code class="sig-name descname">top_sobel</code><a class="headerlink" href="#ChitraPy.filters.top_sobel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies top sobel filter to a colored numpy image.</p>
+<p>Parameters:
+arg1 (np.array): Numpy image matrix.</p>
+<p>Returns:
+np.array: Filterd top sobel image.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-ChitraPy.helpers">
+<span id="chitrapy-helpers-module"></span><h2>ChitraPy.helpers module<a class="headerlink" href="#module-ChitraPy.helpers" title="Permalink to this headline">¶</a></h2>
+<dl class="attribute">
+<dt id="ChitraPy.helpers.InvertGrayImg">
+<code class="sig-prename descclassname">ChitraPy.helpers.</code><code class="sig-name descname">InvertGrayImg</code><a class="headerlink" href="#ChitraPy.helpers.InvertGrayImg" title="Permalink to this definition">¶</a></dt>
+<dd><p>Inverts a single channel image</p>
+<p>Parameters:
+arg1 (np.array): numpy image matrix</p>
+<p>Returns:
+np.array: Gray scale numpy image matrix</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ChitraPy.helpers.display">
+<code class="sig-prename descclassname">ChitraPy.helpers.</code><code class="sig-name descname">display</code><a class="headerlink" href="#ChitraPy.helpers.display" title="Permalink to this definition">¶</a></dt>
+<dd><p>Displays only single channel/ three channel of a numpy image matrix</p>
+<p>Parameters:
+arg1 (np.array): numpy image matrix</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ChitraPy.helpers.find_closest_palette_color">
+<code class="sig-prename descclassname">ChitraPy.helpers.</code><code class="sig-name descname">find_closest_palette_color</code><a class="headerlink" href="#ChitraPy.helpers.find_closest_palette_color" title="Permalink to this definition">¶</a></dt>
+<dd><p>To find the closest palette color.</p>
+<p>Parameters:
+arg1 (np.array): Numpy image matrix.</p>
+<p>Returns:
+np.array: Closet palette color.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ChitraPy.helpers.get_pmf_cdf">
+<code class="sig-prename descclassname">ChitraPy.helpers.</code><code class="sig-name descname">get_pmf_cdf</code><a class="headerlink" href="#ChitraPy.helpers.get_pmf_cdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates PMF and CDF for an image.</p>
+<p>Parameters:
+arg1 (np.array): Numpy image matrix.
+bool : display, default it is False.</p>
+<p>Returns:
+Dictionary : PMF and CDF.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ChitraPy.helpers.histogram">
+<code class="sig-prename descclassname">ChitraPy.helpers.</code><code class="sig-name descname">histogram</code><a class="headerlink" href="#ChitraPy.helpers.histogram" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plots intensity plots for a color image.</p>
+<p>Parameters:
+arg1 (np.array): Numpy image matrix.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ChitraPy.helpers.rgb2gray">
+<code class="sig-prename descclassname">ChitraPy.helpers.</code><code class="sig-name descname">rgb2gray</code><a class="headerlink" href="#ChitraPy.helpers.rgb2gray" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts a given numpy array colored image to gray image</p>
+<p>Parameters:
+arg1 (np.array): numpy image matrix</p>
+<p>Returns:
+np.array: Gray scale numpy image matrix</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="ChitraPy.helpers.save">
+<code class="sig-prename descclassname">ChitraPy.helpers.</code><code class="sig-name descname">save</code><span class="sig-paren">(</span><em class="sig-param">img</em>, <em class="sig-param">name='image'</em><span class="sig-paren">)</span><a class="headerlink" href="#ChitraPy.helpers.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>Saves an image in .jpg format in current working directory.</p>
+<p>Parameters:
+arg1 (np.array): Numpy image matrix.
+arg2 (String) : Name of image. Default it is image.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-ChitraPy">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-ChitraPy" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="setup.html" class="btn btn-neutral float-right" title="setup module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="modules.html" class="btn btn-neutral float-left" title="ChitraPy" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Gautam Mishra, Archit Garg, Sangram Patil
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
