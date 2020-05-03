@@ -11,6 +11,9 @@ pip install ChitraPy
 Find the latest version on PyPi  
 https://pypi.org/project/ChitraPy
 
+## Documentation
+https://chitrapy.readthedocs.io/en/latest/
+
 ## Features
 
 * Crop
