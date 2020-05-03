@@ -1,4 +1,5 @@
-# ChitraPy [![PyPI-Status](https://img.shields.io/badge/pypi-ChitraPy-blue)](https://pypi.org/project/ChitraPy) [![Build Status](https://travis-ci.com/mgautam98/ChitraPy.svg?branch=master)](https://travis-ci.com/mgautam98/ChitraPy)  [![codecov](https://codecov.io/gh/mgautam98/ChitraPy/branch/master/graph/badge.svg)](https://codecov.io/gh/mgautam98/ChitraPy)
+# ChitraPy [![PyPI-Status](https://img.shields.io/badge/pypi-ChitraPy-blue)](https://pypi.org/project/ChitraPy) [![Build Status](https://travis-ci.com/mgautam98/ChitraPy.svg?branch=master)](https://travis-ci.com/mgautam98/ChitraPy)  [![codecov](https://codecov.io/gh/mgautam98/ChitraPy/branch/master/graph/badge.svg)](https://codecov.io/gh/mgautam98/ChitraPy) [![Documentation Status](https://readthedocs.org/projects/chitrapy/badge/?version=latest)](https://chitrapy.readthedocs.io/en/latest/?badge=latest)
+
  
 ChitraPy is a digital Image Processing Library in Python.
 
