@@ -473,7 +473,7 @@ def dither(img):
     for iy in range(h-1):
         for ix in range(1,w-1):
             oldpixel = pixel[ix][iy]
-            newpixel = helpers.find_closest_palette_color(oldpixel)
+            newpixel = helpers._find_closest_palette_color(oldpixel)
             pixel[ix][iy] = newpixel
             err = oldpixel - newpixel
             if ix+1 < w:
@@ -507,7 +507,7 @@ def contrast_enhancement(img):
     except:
         pass
 
-    pmf, cdf = helpers.get_pmf_cdf(img)
+    pmf, cdf = helpers._get_pmf_cdf(img)
 
     new_dic = cdf.copy()
 

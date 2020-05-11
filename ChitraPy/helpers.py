@@ -82,7 +82,7 @@ def histogram(img):
 
 
 @jit(nopython=True)
-def find_closest_palette_color(oldpixel):
+def _find_closest_palette_color(oldpixel):
 
     """
     To find the closest palette color.
@@ -99,7 +99,7 @@ def find_closest_palette_color(oldpixel):
 
 
 @jit
-def get_pmf_cdf(img, display=False):
+def _get_pmf_cdf(img, display=False):
 
     """
     Calculates PMF and CDF for an image.
