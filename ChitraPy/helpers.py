@@ -130,7 +130,7 @@ def _get_pmf_cdf(img, display=False):
     #     for iy in range(img.shape[1]):
     #         pmf[img[ix, iy]] += 1
     
-    fun = lambda pixel: pmf[pixel] +=
+    fun = lambda pixel: pmf[pixel] += 1
     _flat_for(img, fun)
 
     total_pix = img.shape[0]*img.shape[1]
