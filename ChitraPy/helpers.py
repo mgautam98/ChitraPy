@@ -3,6 +3,19 @@ from numba import jit
 import matplotlib.pyplot as plt
 
 
+def _flat_for(a, f):
+    """
+    A utility function to flatten the array and apply function
+
+    Parameters:
+    a (np.array) : numpy image matrix
+    f : function to map
+    """
+    a = a.reshape(-1)
+    for i, v in enumerate(a):
+        a[i] = f(v)
+
+
 @jit
 def rgb2gray(img):
     """
@@ -44,11 +57,8 @@ def InvertGrayImg(img):
     Returns:
     np.array: Gray scale numpy image matrix
     """
-
-    for ix in range(img.shape[0]):
-        for iy in range(img.shape[1]):
-            pixel = img[ix, iy]
-            img[ix, iy] = 255 - pixel
+    fun = lambda pixel: 255 - pixel
+    _flat_for(img, fun)
     return img
 
 
