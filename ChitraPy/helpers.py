@@ -3,6 +3,19 @@ from numba import jit
 import matplotlib.pyplot as plt
 
 
+def _flat_for(a, f):
+    """
+    A utility function to flatten the array and apply function
+
+    Parameters:
+    a (np.array) : numpy image matrix
+    f : function to map
+    """
+    a = a.reshape(-1)
+    for i, v in enumerate(a):
+        a[i] = f(v)
+
+
 @jit
 def rgb2gray(img):
     """
@@ -33,7 +46,6 @@ def display(img):
 
 
 
-@jit(nopython=True)
 def InvertGrayImg(img):
     """
     Inverts a single channel image
@@ -44,11 +56,8 @@ def InvertGrayImg(img):
     Returns:
     np.array: Gray scale numpy image matrix
     """
-
-    for ix in range(img.shape[0]):
-        for iy in range(img.shape[1]):
-            pixel = img[ix, iy]
-            img[ix, iy] = 255 - pixel
+    fun = lambda pixel: 255 - pixel
+    _flat_for(img, fun)
     return img
 
 
@@ -98,7 +107,6 @@ def _find_closest_palette_color(oldpixel):
 
 
 
-@jit
 def _get_pmf_cdf(img, display=False):
 
     """
@@ -120,6 +128,9 @@ def _get_pmf_cdf(img, display=False):
     for ix in range(img.shape[0]):
         for iy in range(img.shape[1]):
             pmf[img[ix, iy]] += 1
+    
+    # fun = lambda pixel: pmf[pixel] = pmf[pixel] + 1
+    # _flat_for(img, fun)
 
     total_pix = img.shape[0]*img.shape[1]
 
