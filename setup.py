@@ -1,9 +1,9 @@
-import setuptools
+from setuptools import setup, find_packages
 
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
-setuptools.setup(
+setup(
     name="ChitraPy",
     version="0.0.1",
     author="Gautam Mishra",
@@ -12,7 +12,8 @@ setuptools.setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/mgautam98/ImgPy",
-    packages=setuptools.find_packages(),
+    packages=find_packages(exclude=['tests']),
+    install_requires=['numpy', 'numba', 'matplotlib'],
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
