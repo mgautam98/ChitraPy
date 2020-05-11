@@ -46,7 +46,6 @@ def display(img):
 
 
 
-@jit(nopython=True)
 def InvertGrayImg(img):
     """
     Inverts a single channel image
@@ -108,7 +107,6 @@ def _find_closest_palette_color(oldpixel):
 
 
 
-@jit
 def _get_pmf_cdf(img, display=False):
 
     """
@@ -127,9 +125,13 @@ def _get_pmf_cdf(img, display=False):
     for i in range(256):
         pmf[i] = 0
 
-    for ix in range(img.shape[0]):
-        for iy in range(img.shape[1]):
-            pmf[img[ix, iy]] += 1
+    # old code replaced
+    # for ix in range(img.shape[0]):
+    #     for iy in range(img.shape[1]):
+    #         pmf[img[ix, iy]] += 1
+    
+    fun = lambda pixel: pmf[pixel] +=
+    _flat_for(img, fun)
 
     total_pix = img.shape[0]*img.shape[1]
 
