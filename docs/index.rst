@@ -27,6 +27,28 @@ Install from source
    cd ChitraPy  
    python3 setup.py install
 
+Usage
+==================
+
+.. code-block:: python
+   :linenos:
+   :caption: sample.py
+   :name: sample-py
+
+   from ChitraPy import filters, helpers
+   import matplotlib.pyplot as plt
+
+   # Load a sample Image
+
+   !wget https://i.imgur.com/D24n5DL.png
+   img = plt.imread('./D24n5DL.png')
+   plt.imshow(img)
+
+   # invert an image
+   invert = filters.invert(img)
+   plt.imshow(invert)
+
+
 Filters
 ==================
 .. automodule:: ChitraPy.filters
