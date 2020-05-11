@@ -11,8 +11,31 @@ pip install ChitraPy
 Find the latest version on PyPi  
 https://pypi.org/project/ChitraPy
 
+### Install Dev version
+```
+git clone https://github.com/mgautam98/ChitraPy.git
+cd ChitraPy
+python3 setup.py install
+```
 ## Documentation
 https://chitrapy.readthedocs.io/en/latest/
+
+
+## Usage
+```
+from ChitraPy import filters, helpers
+import matplotlib.pyplot as plt
+
+# Load a sample Image
+
+!wget https://i.imgur.com/D24n5DL.png
+img = plt.imread('./D24n5DL.png')
+plt.imshow(img)
+
+# invert an image
+invert = filters.invert(img)
+plt.imshow(invert)
+```
 
 ## Features
 

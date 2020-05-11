@@ -30,12 +30,7 @@
 |26.| Contrast adjustment (Histogram sliding) | Done |
 
 
-# Desktop/Web Application
-
-* Browse and select Image
-* Dropdown to select filter
-* Button to apply filter
-* Save feature 
+# Improve performance using maps
 
 
 
