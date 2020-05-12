@@ -22,6 +22,7 @@ https://chitrapy.readthedocs.io/en/latest/
 
 
 ## Usage
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/mgautam98/ChitraPy.git/dev)
 ```
 from ChitraPy import filters, helpers
 import matplotlib.pyplot as plt
