@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name="ChitraPy",
-    version="0.0.1",
+    version="0.0.2",
     author="Gautam Mishra",
     author_email="mishragautam96@gmail.com",
     description="Digital Image Processing Library",
